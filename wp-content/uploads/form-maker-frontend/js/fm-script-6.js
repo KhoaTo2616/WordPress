@@ -16,14 +16,18 @@
     var inputIds6 = '[]';
         var update_first_field_id6 = 0;
     var form_view_count6 = 0;
-     function before_load6() {	
-}	
+     function before_load6() {
+     
+}
+
  function before_submit6() {
-	 }	
- function before_reset6() {	
+      }
+
+ function before_reset6() {
+     
 }
  function after_submit6() {
-  
+     
 }    function onload_js6() {    }
 
     function condition_js6() {    }
