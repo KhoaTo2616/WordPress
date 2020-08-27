@@ -1,4 +1,4 @@
-/*! elementor - v3.0.2 - 26-08-2020 */
+/*! elementor - v3.0.3 - 27-08-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -946,7 +946,8 @@ __webpack_require__(26);
         $importArea: $('#elementor-import-template-area'),
         $settingsForm: $('#elementor-settings-form'),
         $settingsTabsWrapper: $('#elementor-settings-tabs-wrapper'),
-        $menuGetHelpLink: $('a[href="admin.php?page=go_knowledge_base_site"]')
+        $menuGetHelpLink: $('a[href="admin.php?page=go_knowledge_base_site"]'),
+        $reMigrateGlobalsButton: $('.elementor-re-migrate-globals-button')
       };
       elements.$settingsFormPages = elements.$settingsForm.find('.elementor-settings-form-page');
       elements.$activeSettingsPage = elements.$settingsFormPages.filter('.elementor-active');
@@ -1127,6 +1128,26 @@ __webpack_require__(26);
           onConfirm: function onConfirm() {
             $this.addClass('loading');
             location.href = $this.attr('href');
+          }
+        }).show();
+      });
+      self.elements.$reMigrateGlobalsButton.on('click', function (event) {
+        event.preventDefault();
+        var $this = $(event.currentTarget);
+        elementorCommon.dialogsManager.createWidget('confirm', {
+          headerMessage: self.translate('re_migrate_globals'),
+          message: self.translate('re_migrate_globals_confirm'),
+          strings: {
+            confirm: self.translate('yes'),
+            cancel: self.translate('cancel')
+          },
+          onConfirm: function onConfirm() {
+            $this.removeClass('success').addClass('loading');
+            elementorCommon.ajax.addRequest('re_migrate_globals', {
+              success: function success() {
+                return $this.removeClass('loading').addClass('success');
+              }
+            });
           }
         }).show();
       });

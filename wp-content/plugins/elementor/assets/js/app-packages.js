@@ -1,4 +1,4 @@
-/*! elementor - v3.0.2 - 26-08-2020 */
+/*! elementor - v3.0.3 - 27-08-2020 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -8011,9 +8011,10 @@ var _text = _interopRequireDefault(__webpack_require__(347));
 
 function DialogText(props) {
   return /*#__PURE__*/_react.default.createElement(_text.default, (0, _extends2.default)({
-    className: "eps-dialog__text",
     variant: "xs"
-  }, props));
+  }, props, {
+    className: "eps-dialog__text ".concat(props.className)
+  }));
 }
 
 DialogText.propTypes = (0, _objectSpread2.default)({}, _text.default.propTypes);
