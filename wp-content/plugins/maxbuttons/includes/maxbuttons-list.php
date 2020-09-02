@@ -102,14 +102,14 @@ $this->mbadmin->get_header(array("title" => $page_title, "title_action" => $acti
 <?php  // Sorting
 			$link_order =  ($view->pageArgs['order'] == "DESC") ? "ASC" : 'DESC';
 
-			$name_sort_url = add_query_arg(array(
+			$name_sort_url = esc_url(add_query_arg(array(
 				"orderby" => "name",
 				"order" => $link_order
-				));
-			$id_sort_url = add_query_arg(array(
+			)));
+			$id_sort_url = esc_url(add_query_arg(array(
 				"orderby" => "id",
 				"order" => $link_order
-				));
+			)));
 
 			$sort_arrow = ( strtolower($view->pageArgs["order"]) == 'desc') ? 'dashicons-arrow-down' : 'dashicons-arrow-up'
 ?>

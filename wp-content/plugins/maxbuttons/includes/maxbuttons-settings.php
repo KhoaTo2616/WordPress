@@ -105,21 +105,52 @@ $admin->get_header(array("tabs_active" => true, "title" => $page_title) );
                         echo $bbox->output('start','end');
                      	?>
                      </div>
-
+<hr>
                      <div class='option-design'>
                      	<?php
                       $option_autoresponsive = get_option('maxbuttons_autoresponsive', 1);
                      		$autor = new maxField('switch');
                      		$autor->label = __('Apply auto-responsive','maxbuttons');
-                     		$autor->note =  __('Active when a button doesn\'t have any responsive screens. Autoresponsive makes the button smaller and relative to the screen on devices. When enabled, it automatically applies this styling.', 'maxbuttons');
+                     		$autor->note =  __('Active when a button doesn\'t have any responsive screens. Autoresponsive makes the button smaller and relative to the screen on devices smaller than 480px. When enabled, it automatically applies this styling.', 'maxbuttons');
                      		$autor->name = 'maxbuttons_autoresponsive';
                      		$autor->id = $autor->name;
                      		$autor->value = '1';
                      		$autor->checked = checked($option_autoresponsive, 1, false);
                         echo $autor->output('start','end');
+
+
+                        $condition = array('target' => $autor->id, 'values' => 'checked');
+                        $conditional = htmlentities(json_encode($condition));
+
+                        $option_autorfont = get_option('maxbuttons_autor_font', 80);
+
+                        $autorfont = new maxField('number');
+                        $autorfont->id = 'maxbuttons_autor_font';
+                        $autorfont->name = $autorfont->id;
+                        $autorfont->value = $option_autorfont;
+                        $autorfont->label = __('Auto font size reduction', 'maxbuttons');
+                        $autorfont->start_conditional = $conditional;
+                        $autorfont->inputclass = 'tiny';
+                        $autorfont->after_input = __('%', 'maxbuttons');
+                        echo $autorfont->output('start', 'end');
+
+                        $option_autorwidth = get_option('maxbuttons_autor_width', 90);
+
+                        $autorwidth = new maxField('number');
+                        $autorwidth->id = 'maxbuttons_autor_width';
+                        $autorwidth->name = $autorwidth->id;
+                        $autorwidth->value = $option_autorwidth;
+                        $autorwidth->label = __('Auto button size on screen', 'maxbuttons');
+                        $autorwidth->start_conditional = $conditional;
+                        $autorwidth->inputclass = 'tiny';
+                        $autorwidth->note = __('The button will resize to this amount of percentage of the screen width. Default 90%', 'maxbuttons');
+                        $autorwidth->after_input = __('%', 'maxbuttons');
+                        echo $autorwidth->output('start', 'end');
+
+
                      	?>
                      </div>
-
+<hr />
                      <div class='option-design'>
                      <?php
                   /*   	$option_forcefa = get_option('maxbuttons_forcefa');
@@ -260,7 +291,7 @@ $admin->get_header(array("tabs_active" => true, "title" => $page_title) );
   		</form>
 
 		<?php else: ?>
-  		<a href="<?php echo add_query_arg('show_replace',true); ?>"><?php _e("I need to bulk edit something","maxbuttons"); ?></a>
+  		<a href="<?php echo esc_url(add_query_arg('show_replace',true)); ?>"><?php _e("I need to bulk edit something","maxbuttons"); ?></a>
   		<?php endif; ?>
 
         </div>

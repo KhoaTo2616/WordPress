@@ -167,6 +167,9 @@ class maxButtons
 				$redirect = add_query_arg(array('action' => 'list', 'message' => 'empty-trash'), $redirect);
 		//	$redirect_url = admin_url() . 'admin.php?page=maxbuttons-controller&action=list&message=empty-trash';
 			break;
+			default:
+				// Nothing, this is just compat.
+			break;
 
 		}
 

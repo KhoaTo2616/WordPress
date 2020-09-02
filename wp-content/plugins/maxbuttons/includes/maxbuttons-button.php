@@ -181,14 +181,15 @@ $admin->get_header(array("title" => $page_title, "title_action" => $action) );
            case 'new':
             $icon = 'dashicons-plus';
            break;
-           case 'default':
-            $icon = 'dashicons-desktop';
-           break;
            case 'responsive':
             if ($min_width >= 1024)
               $icon = 'dashicons-laptop';
             else
               $icon =  'dashicons-smartphone';
+           break;
+           case 'default':
+           default:
+            $icon = 'dashicons-desktop';
            break;
          }
 

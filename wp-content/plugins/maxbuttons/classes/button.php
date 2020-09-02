@@ -476,6 +476,7 @@ class maxButton
   			break;
  			break;
  			case "normal":
+			default:
  				$preview = false;
  				$compile = false;
  			break;

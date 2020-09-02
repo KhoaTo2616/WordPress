@@ -494,7 +494,7 @@ class maxCSSParser
 	protected function doMixins($values)
 	{
 		$mixins = array("gradient", "box-shadow", "text-shadow", "keyframes");
-//echo "<PRE>MIXINS!"; print_R($values); echo "</PRE>";
+
 		foreach($mixins as $mixin)
 		{
 
@@ -523,6 +523,9 @@ class maxCSSParser
 					break;
 					case 'keyframes':
 						$values = $this->mixin_keyframes($mixin_array, $values);
+					break;
+					default:
+						// Do Nothing, just for compat.
 					break;
 				}
 			}

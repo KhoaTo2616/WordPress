@@ -2,9 +2,9 @@
 Contributors: maxfoundry, basszje, arcware, johnbhartley
 Tags: wordpress button plugin, share button, wordpress buttons, css3 button generator, responsive buttons, css wordpress button
 Requires at least: 4.8
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 5.6
-Stable tag: 8.1.2
+Stable tag: 8.2
 
 WordPress button plugin so powerful and easy to use anyone can create beautiful buttons, share buttons and social icons.
 
@@ -264,9 +264,15 @@ Secondly, please use latin only characters for button name ( Basic settings) and
 
 == Changelog ==
 
+= 8.2 =
+
+* New - You can now control how much auto-responsive mode changes buttons - in settings
+* Fix - Collections transitional database table caused issues on some installations
+* Fix - Code quality updates
+
 = 8.1.2 =
 
-* Fix - In Auto-responsive, font-size would be decreased doubly in size. 
+* Fix - In Auto-responsive, font-size would be decreased doubly in size.
 
 = 8.1.1 =
 

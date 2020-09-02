@@ -170,7 +170,7 @@ class maxButtonsAdmin
 
 		$return = array(
 			"first" => 1,
-			"base" => remove_query_arg("paged",$url),
+			"base" => esc_url(remove_query_arg("paged",$url)),
 			"first_url" => esc_url($first_url),
 			"last"  => $num_pages,
 			"last_url" =>  esc_url($last_url),

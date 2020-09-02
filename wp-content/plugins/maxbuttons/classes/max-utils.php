@@ -198,6 +198,8 @@ class maxUtils
 			case 3:
 				return $query_descriptions;
 			break;
+			default:
+				return $query_names;
 		}
 
 	}

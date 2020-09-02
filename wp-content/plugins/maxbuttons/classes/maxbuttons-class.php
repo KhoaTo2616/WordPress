@@ -249,6 +249,9 @@ class maxButtonsPlugin
 		register_setting( 'maxbuttons_settings', 'maxbuttons_protocol');
 		register_setting( 'maxbuttons_settings', 'maxbuttons_autoresponsive');
 
+		register_setting( 'maxbuttons_settings', 'maxbuttons_autor_font');
+		register_setting( 'maxbuttons_settings', 'maxbuttons_autor_width');
+
 	}
 
 	protected function checkbox_option($options)

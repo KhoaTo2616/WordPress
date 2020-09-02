@@ -28,6 +28,9 @@ class responsiveBlock extends maxBlock
 			$data = $this->data[$this->blockname];
 
 		 $option_autoresponsive = get_option('maxbuttons_autoresponsive', 1);
+		 $option_fontsize = 	get_option('maxbuttons_autor_font', 80);
+		 $option_buttonwidth = get_option('maxbuttons_autor_width', 90);
+
 		 if (! Screen::hasResponsive() && $option_autoresponsive == 1 && ! isset($screens['rsauto']) )
 		 {
 			 	$prefix = 'rsauto';
@@ -37,26 +40,26 @@ class responsiveBlock extends maxBlock
 				$this->data['responsive'][$prefix . '_screen_name'] = 'AutoResponsive';
 				$this->data['responsive']['screens'][] = $prefix;
 
-				$this->data['dimension'][$prefix . '_button_width'] = 90;
+				$this->data['dimension'][$prefix . '_button_width'] = $option_buttonwidth;
 				$this->data['dimension'][$prefix . '_button_size_unit_width'] = 'percent';
 
-				$this->data['container'][$prefix . '_container_width']  = 90;
+				$this->data['container'][$prefix . '_container_width']  = $option_buttonwidth;
 				$this->data['container'][$prefix . '_container_width_unit']  = 'percent';
 				$this->data['container'][$prefix . '_container_alignment']  = 'float:none';
 
 				$css['maxbutton']['responsive'][$prefix] = array(
 							'definition' => array('min_width' => 0, 'max_width' => 480, 'screen_name' => 'autoresponsive'),
-							'normal' => array('width' => '90%'),
+							'normal' => array('width' => $option_buttonwidth . '%'),
 				 );
 
-				 $css['mb-container']['responsive'][$prefix] = array('normal' => array('width' => '90%', 'float' => 'none'));
+				 $css['mb-container']['responsive'][$prefix] = array('normal' => array('width' => $option_buttonwidth . '%', 'float' => 'none'));
 
-				 $css["mb-text"]["responsive"]["phone"][0]["font-size"] = "90%";
+				 $css["mb-text"]["responsive"]["phone"][0]["font-size"] = $option_buttonwidth . "%";
 
 				 if (isset($this->data['text']['font_size']))
 				 {
 					 //var_dump( floor(intval($this->data["text"]["font_size"]) * 0.8));
-						$css['mb-text']['responsive'][$prefix] = array('normal' => array('font-size' => floor(intval($this->data["text"]["font_size"]) * 0.8) . 'px'));
+						$css['mb-text']['responsive'][$prefix] = array('normal' => array('font-size' => floor(intval($this->data["text"]["font_size"]) * ($option_fontsize/100) ) . 'px'));
 				 }
 
 	 			Screen::setupScreens($this->data);

@@ -548,9 +548,9 @@ class maxInstall
 				id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
  				name varchar(1000),
 				value varchar(255),
-				expire int(11),
+				expire int(11)
 				);
-		"; 
+		";
 
 		$res = dbDelta($sql);
 	}

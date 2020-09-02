@@ -72,9 +72,9 @@ class supportController extends MaxController
       // Finally get the correct version number
       $known = array('Version', $browser_name_short, 'other');
       $pattern = '#(?<browser>' . join('|', $known) . ')[/ ]+(?<version>[0-9.|a-zA-Z.]*)#';
-      if (!preg_match_all($pattern, $user_agent, $matches)) {
+      /*if (!preg_match_all($pattern, $user_agent, $matches)) {
           // We have no matching number just continue
-      }
+      } */
 
       // See how many we have
       $i = count($matches['browser']);

@@ -45,14 +45,14 @@ abstract class MaxController
        $link = add_query_arg('id', $button_id, $link);
      }
      $link = add_query_arg($args,$link);
-     return $link;
+     return esc_url_raw($link);
   }
 
   public function getListLink($view = 'all', $args = array() )
   {
      $link = admin_url() . 'admin.php?page=maxbuttons-controller&view=' . $view;
      $link = add_query_arg($args,$link);
-     return $link;
+     return esc_url_raw($link);
 
   }
 

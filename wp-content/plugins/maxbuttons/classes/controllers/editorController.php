@@ -15,7 +15,7 @@ class editorController extends MaxController
 
   public function view()
   {
-    
+
     $this->loadView();
 
     if ($_POST) {
@@ -149,7 +149,7 @@ class editorController extends MaxController
 
     if ($current_screen != 'default')
     {
-      $url .= '#' . $current_screen;
+      $url .= '#' . urlencode($current_screen);
     }
 
   	 wp_redirect($url);
