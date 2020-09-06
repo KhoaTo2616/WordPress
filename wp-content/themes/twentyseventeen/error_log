@@ -1,0 +1,12 @@
+[13-Jul-2020 09:30:16 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function get_template_part() in /home4/khoato2616/public_html/wp-content/themes/twentyseventeen/footer.php:22
+Stack trace:
+#0 {main}
+  thrown in /home4/khoato2616/public_html/wp-content/themes/twentyseventeen/footer.php on line 22
+[13-Jul-2020 10:19:16 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function get_template_part() in /home4/khoato2616/public_html/wp-content/themes/twentyseventeen/footer.php:22
+Stack trace:
+#0 {main}
+  thrown in /home4/khoato2616/public_html/wp-content/themes/twentyseventeen/footer.php on line 22
+[15-Jul-2020 01:50:45 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function get_template_directory() in /home4/khoato2616/public_html/wp-content/themes/twentyseventeen/functions.php:16
+Stack trace:
+#0 {main}
+  thrown in /home4/khoato2616/public_html/wp-content/themes/twentyseventeen/functions.php on line 16
