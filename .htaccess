@@ -42,6 +42,7 @@ RewriteRule . /WordPress/index.php [L]
 # The directives (lines) between "BEGIN HttpHeadersCookieSecurity" and "END HttpHeadersCookieSecurity" are
 # dynamically generated, and should only be modified via WordPress filters.
 # Any changes to the directives between these markers will be overwritten.
+php_flag session.cookie_secure on
 php_value session.cookie_samesite "None"
 # END HttpHeadersCookieSecurity
 # BEGIN HttpHeadersTiming
