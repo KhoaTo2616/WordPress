@@ -4,6 +4,7 @@ jQuery( function () {
 jQuery(document).on('fm_tab_loaded, fm_tab_email_loaded', function () {
   fm_admin_ready();
 });
+
 jQuery(window).on('load', function () {
   jQuery('#fm_loading').hide();
   jQuery('#fm_admin_container').show();
